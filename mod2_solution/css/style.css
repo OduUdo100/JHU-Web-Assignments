@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.desktop-title {
+    font-size: 1.75em;
+    color: #333;
+}
+
+.mobile-title {
+    display: none;
+    font-size: 1.25em; 
+    font-family: 'Georgia', serif; 
+    text-align: left; 
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.container {
+    width: 100%;
+}
+
+.section {
+    position: relative;
+    background-color: #f9f9f9;
+    border: 1px solid black;
+    margin-bottom: 30px;
+    padding: 40px 15px 15px 15px;
+    float: left;
+    overflow: hidden;
+    height: 250px;
+}
+
+.section-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+}
+
+.section-title h3 {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+#chicken-title {
+    background-color: #d59898;
+}
+
+#beef-title {
+    background-color: #c14543;
+    color: white;
+}
+
+#sushi-title {
+    background-color: #e5d198;
+}
+
+.content {
+    overflow: hidden;
+}
+
+.section:hover {
+    cursor: ns-resize; 
+    overflow-y: auto;
+}
+
+/* Desktop view */
+@media (min-width: 992px) {
+    .section {
+        width: 31.33%;
+        margin-right: 2%;
+    }
+    
+    .section:nth-child(3n) {
+        margin-right: 0;
+    }
+}
+
+/* Tablet view */
+@media (min-width: 768px) and (max-width: 991px) {
+    .section {
+        width: 48%;
+        margin-right: 4%;
+    }
+    
+    .section:nth-child(2n) {
+        margin-right: 0;
+    }
+    
+    .section:nth-child(3) {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 767px) {
+    .desktop-title {
+        display: none;
+    }
+    
+    .mobile-title {
+        display: block;
+    }
+    
+    .section {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .section-title {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .section-title h3 {
+        font-size: 1.1em;
+    }
+}
