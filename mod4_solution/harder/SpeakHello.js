@@ -1,8 +1,13 @@
 //Name: Odudu Udo-Inyang
 //Assignment 4 Module 4
 
-(function(window) {
-  var helloSpeaker = {};
+// (function(window) {
+  
+
+//   window.helloSpeaker = helloSpeaker;
+// }) (window); 
+
+var helloSpeaker = {};
 
   var speakWord = "Hello";
 
@@ -13,7 +18,3 @@
   helloSpeaker.speakSmile = function(name) {
     return speakWord + " " + name
   }
-
-  window.helloSpeaker = helloSpeaker;
-}) (window); 
-
