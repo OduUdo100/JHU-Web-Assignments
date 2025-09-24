@@ -1,21 +1,20 @@
 //Name: Odudu Udo-Inyang
 //Assignment 4 Module 4
 
-// (function (window) {
+(function (window) {
+  var byeSpeaker = {};
+
+  var speakWord = "Good Bye";
+
+  byeSpeaker.speak = function speak(name) {
+    console.log(speakWord + " " + name);
+  }
+
+  byeSpeaker.speakSimple = function speakSimple(name) {
+    return speakWord + " " + name; 
+  }
+
+  window.byeSpeaker = byeSpeaker; 
   
+})(window);
 
-//   window.byeSpeaker = byeSpeaker; 
-  
-// })(window);
-
-var byeSpeaker = {};
-
-var speakWord = "Good Bye";
-
-function speak(name) {
-  console.log(speakWord + " " + name);
-}
-
-function speakSimple(name) {
-  return speakWord + " " + name; 
-}
