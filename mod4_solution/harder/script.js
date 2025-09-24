@@ -16,20 +16,20 @@
     }
   }
 
-  function getGreetings(name) {
+  function getGreeting(name) {
     var firstLetter = name.charAt(0).toLowerCase();
     if(firstLetter === 'j') {
       return byeSpeaker.speakSimple(name); 
     } else {
-      return helloSpeaker.speakSmile(name);
+      return helloSpeaker.speakSimple(name);
     }
   }
 
-  var greetingsArray = names.map(getGreetings);
+  var greetingsArray = names.map(getGreeting);
 
-  console.log("______Output using map______")
+  console.log("______Output using map(). ______")
   greetingsArray.forEach(function(greeting){
     console.log(greeting);
   });
 
-}) (); 
+})(); 
