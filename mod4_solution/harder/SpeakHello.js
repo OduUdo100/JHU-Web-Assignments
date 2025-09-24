@@ -11,7 +11,7 @@
     console.log(speakWord + " " + name);
   }
 
-  helloSpeaker.speakSmile = function(name) {
+  helloSpeaker.speakSimple = function(name) {
     return speakWord + " " + name
   }
 
