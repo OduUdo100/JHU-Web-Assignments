@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingListCheckOff">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Shopping List Check Off</title>
+</head>
+<body>
+    <div class="app-header">
+        <h1>Shopping List Check Off</h1>
+    </div>
+    
+    <div class="container">
+        <div class="list-container" ng-controller="ToBuyController as toBuy">
+            <h2> To Buy:</h2>
+            <div ng-if="toBuy.items.length === 0" class="empty-message"> Everything is bought! </div>
+            <div ng-repeat="item in toBuy.items" class="item">
+                <span class="item-text">
+                    Buy
+                    <input type="number" ng-model="item.quantity" min="1" class="quantity-input"> 
+                    {{item.name}} at {{item.pricePerItem | currency }}/each
+                </span>
+                <button ng-click="toBuy.buyItem($index)" class="bought-button"> Bought</button>
+            </div>
+        </div>
+
+        <div class="list-container" ng-controller="AlreadyBoughtController as bought">
+            <h2> Already Bought:</h2>
+            <div ng-if="bought.items.length === 0" class="empty-message"> Nothing bought yet </div>
+            <div ng-repeat="item in bought.items track by $index" class="item bought-item">
+                <span class="item-text">
+                    Bought {{item.quantity}} {{item.name}} for total price of {{item.totalPrice | customDollar}} 
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

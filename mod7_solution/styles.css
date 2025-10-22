@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fdf8f3;
+  color: #3e2c20;
+  line-height: 1.6;
+}
+
+.app-header {
+  background-color: #b58b60;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  gap: 1.5rem;
+}
+
+.list-container {
+  background-color: white;
+  width: 45%;
+  border: 1px solid #d9c7b0;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.list-container h2 {
+  color: #5a3d2b;
+  border-bottom: 2px solid #b58b60;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.empty-message {
+  color: #8b7355;
+  text-align: center;
+  font-style: italic;
+  background-color: #faf3eb;
+  border: 1px dashed #d9c7b0;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.8rem 0;
+  padding: 0.8rem;
+  border: 1px solid #e2d1b3;
+  border-radius: 6px;
+  background-color: #fffdf9;
+}
+
+.bought-item {
+  background-color: #f8f2ea;
+  border-color: #c9ad8a;
+}
+
+.item-text {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.quantity-input {
+  width: 60px;
+  padding: 0.4rem;
+  border: 1px solid #d9c7b0;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.bought-button {
+  background-color: #a87449;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.bought-button:disabled {
+  background-color: #cbbba4;
+  cursor: not-allowed;
+}
+
+/* Currency formatting */
+.custom-dollar {
+  font-weight: 600;
+  color: #5a3d2b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .list-container {
+    width: 90%;
+    margin-bottom: 1.5rem;
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .bought-button {
+    align-self: flex-end;
+  }
+}
+
+
