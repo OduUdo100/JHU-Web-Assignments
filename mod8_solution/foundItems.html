@@ -1,0 +1,16 @@
+<div class="found-items-container">
+    <ul ng-if="!list.isEmpty()" class="found-items-list">
+        <li ng-repeat="item in list.items track by $index" class="found-item">
+            <div class="item-info">
+                <div class="item-name">{{ item.name }}</div>
+                <div class="item-short-name">({{ item.short_name }})</div>
+                <div class="item-description">{{ item.description }}</div>
+            </div>
+            <button ng-click="list.remove($index)" 
+                    class="remove-btn"
+                    title="Remove this item from the list">
+                Don't want this one!
+            </button>
+        </li>
+    </ul>
+</div>
