@@ -1,0 +1,7 @@
+<ul class="items-list">
+    <li ng-repeat="item in $ctrl.items.menu_items">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <p><strong>Price:</strong> ${{ item.price_large || item.price_small }}</p>
+    </li>
+</ul>
