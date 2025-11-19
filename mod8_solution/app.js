@@ -74,8 +74,8 @@
                     var menuItems = data[category].menu_items;
                     
                     // Loop through each item in the category
-                    for (var i = 0; i < menuItems.length; i++) {
-                        var item = menuItems[i];
+                    for (const element of menuItems) {
+                        var item = element;
                         
                         // Check if description contains search term (case insensitive)
                         if (item.description.toLowerCase().indexOf(searchTermLower) !== -1) {
