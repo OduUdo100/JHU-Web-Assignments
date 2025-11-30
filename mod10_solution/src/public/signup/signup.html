@@ -1,6 +1,6 @@
 <div class="container">
   <h2>Sign Up for Our Newsletter</h2>
-  <form name="signupForm" novalidate>
+  <form name="signupForm" novalidate ng-submit="signupCtrl.submit()">
     <!-- First Name -->
     <div class="form-group">
       <label for="firstName">First Name</label>
@@ -66,10 +66,9 @@
         No such menu number exists
       </div>
     </div>
+    <button type="submit" class="btn btn-primary" ng-disabled="signupForm.$invalid || signupCtrl.invalidMenuItem"> Submit</button>
 
-    <button type="submit" class="btn btn-primary" ng-disabled="signupForm.$invalid || signupCtrl.invalidMenuItem" ng-click="signupCtrl.submit()"> Submit </button>
   </form>
-
   <div ng-if="signupCtrl.saved" class="alert alert-success mt-3">
     Your information has been saved.
   </div>

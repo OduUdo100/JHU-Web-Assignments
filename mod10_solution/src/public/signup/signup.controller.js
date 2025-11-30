@@ -21,13 +21,19 @@
             }
         }; 
 
-        $ctrl.submit = function() {
+        $ctrl.submit = function() {            
+            // Prevent the function from running if no favorite item
+            if (!$ctrl.user.favorite) {
+                console.log('No favorite item provided');
+                return;
+            }
+
             var menuItem = $ctrl.user.favorite.toUpperCase(); 
             
             MenuService.getMenuItem(menuItem).then(function(response) {
                 if(response) {
                     $ctrl.user.favoriteItem = response;
-                    UserService.saveUser($ctrl.user); 
+                    UserService.saveUser($ctrl.user);
                     $ctrl.saved = true; 
                     $ctrl.invalidMenuItem = false; 
                 } else {
