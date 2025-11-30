@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>My Information</h2>
+  
+  <div ng-if="!myInfoCtrl.user">
+    <p>Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></p>
+  </div>
+
+  <div ng-if="myInfoCtrl.user">
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Personal Information</h4>
+        <p><strong>First Name:</strong> {{myInfoCtrl.user.firstName}}</p>
+        <p><strong>Last Name:</strong> {{myInfoCtrl.user.lastName}}</p>
+        <p><strong>Email:</strong> {{myInfoCtrl.user.email}}</p>
+        <p><strong>Phone:</strong> {{myInfoCtrl.user.phone}}</p>
+      </div>
+    </div>
+
+    <div class="row mt-4" ng-if="myInfoCtrl.user.favoriteItem">
+      <div class="col-md-12">
+        <h4>Favorite Menu Item</h4>
+        <div class="media">
+          <img class="mr-3" ng-src="{{myInfoCtrl.user.favoriteItem.imageUrl}}" 
+               alt="{{myInfoCtrl.user.favoriteItem.name}}" style="width: 150px; height: 100px;">
+          <div class="media-body">
+            <h5 class="mt-0">{{myInfoCtrl.user.favoriteItem.name}}</h5>
+            <p>{{myInfoCtrl.user.favoriteItem.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
